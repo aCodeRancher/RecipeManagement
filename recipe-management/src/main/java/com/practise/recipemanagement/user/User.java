@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.practise.recipemanagement.recipe.Recipe;
 
@@ -30,7 +31,7 @@ public class User {
 	private boolean approvedFlag;
 	
 	@OneToMany(targetEntity=Recipe.class, fetch=FetchType.LAZY, mappedBy="user" )
-	@JsonManagedReference
+//	@JsonManagedReference
 	private List<Recipe> recipes = new ArrayList();
 	
 	public List<Recipe> getRecipes() {
