@@ -14,8 +14,10 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.practise.recipemanagement.user.User;
+import lombok.Data;
 
 @Entity
+@Data
 public class Recipe {
 	
 	@Id
@@ -46,7 +48,7 @@ public class Recipe {
 		this.instructions = instructions;
 		this.user = user;
 	}
-
+    /*
 	public Integer getId() {
 		return id;
 	}
@@ -86,4 +88,6 @@ public class Recipe {
 	public void setIngredients(List<RecipeIngredient> ingredients) {
 		this.ingredients = ingredients;
 	}
+	*/
+
 }
