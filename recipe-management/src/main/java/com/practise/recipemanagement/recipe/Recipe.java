@@ -11,6 +11,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.practise.recipemanagement.user.User;
 
@@ -24,14 +25,15 @@ public class Recipe {
 	private String title;	
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JsonBackReference
-	private User user;	
+	//@JsonBackReference
+	@JsonIgnore
+	private User user;
 	
 	private String instructions;
 	
 	@OneToMany(targetEntity=RecipeIngredient.class, fetch=FetchType.LAZY, mappedBy="recipe" )
-	@JsonManagedReference
-	private List<RecipeIngredient> ingredients = new ArrayList<RecipeIngredient>();
+	//@JsonManagedReference
+    private List<RecipeIngredient> ingredients = new ArrayList<RecipeIngredient>();
 	
 	protected Recipe() {
 		
