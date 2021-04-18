@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class RecipeIngredient {
@@ -20,8 +21,9 @@ public class RecipeIngredient {
 	private String quantity;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JsonBackReference
-	private Recipe recipe;	
+	//@JsonBackReference
+	@JsonIgnore
+    private Recipe recipe;
 	
 	
 	protected RecipeIngredient() {
