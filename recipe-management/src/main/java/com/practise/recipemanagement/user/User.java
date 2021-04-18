@@ -12,8 +12,10 @@ import javax.persistence.OneToMany;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.practise.recipemanagement.recipe.Recipe;
+import lombok.Data;
 
 @Entity
+@Data
 public class User {
 	
 	@Id
@@ -54,7 +56,7 @@ public class User {
 		
 	}	
 
-	public Integer getId() {
+	/*public Integer getId() {
 		return id;
 	}
 
@@ -101,7 +103,7 @@ public class User {
 	public void setApprovedFlag(boolean approvedFlag) {
 		this.approvedFlag = approvedFlag;
 	}
-
+    */
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
