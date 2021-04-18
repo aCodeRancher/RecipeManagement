@@ -8,8 +8,11 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Data
 public class RecipeIngredient {
 	
 	@Id
@@ -26,7 +29,7 @@ public class RecipeIngredient {
     private Recipe recipe;
 	
 	
-	protected RecipeIngredient() {
+	 protected RecipeIngredient() {
 		
 	}
 
@@ -35,7 +38,7 @@ public class RecipeIngredient {
 		this.name = name;
 	}
 
-	public Integer getId() {
+	/*ublic Integer getId() {
 		return id;
 	}
 
@@ -65,6 +68,7 @@ public class RecipeIngredient {
 
 	public void setRecipe(Recipe recipe) {
 		this.recipe = recipe;
-	}
+	}*/
+
 }
 
